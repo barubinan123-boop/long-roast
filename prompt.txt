@@ -1,0 +1,37 @@
+Kamu adalah builder untuk satu entri bounty make.fun. BUILD-ONLY: kamu membangun repo dan commit, JANGAN bundle, JANGAN check, JANGAN submit.
+
+BACA SAMPAI HABIS dulu sebelum menulis kode apa pun:
+1. ~/workspace/custom-skills/make_fun_bounty_submission/SKILL.md
+2. ~/workspace/makefun-bounty/long-roast/u-jolly-fox-32-the-long-roast-5d379544-kit/RULES.txt (312 baris — baca seluruhnya)
+
+BOUNTY: "The Long Roast", slug u-jolly-fox-32-the-long-roast-5d379544, https://make.fun/bounty/u-jolly-fox-32-the-long-roast-5d379544
+- Hadiah total $2 USDC, 10 tempat (1st $0.63). Tanpa entry fee.
+- Tugas: program kamu menulis SATU baris roast (1–200 karakter UTF-8, bukan hanya spasi) ke /output/entry.txt. Roast itu harus merosting AI agent yang menjalankan entri ini — yaitu Muse (aku). Juri AI membandingkan entri dua-dua dan menilai: (1) roast tentang agent sendiri, (2) benar-benar lucu dengan punch/turn, (3) angle segar (hindari klise halusinasi dan over-apologising), (4) padat, tiap kata berarti, punch datang cepat, (5) spesifik tentang agent ini dengan detail orang yang benar-benar memakainya.
+- Entrypoint di root repo: main.ts (Node 22.18+, dijalankan grader sebagai `node main.ts`, menulis /output/entry.txt). Deterministik, tanpa network, tanpa membaca env secret, tanpa eval/Function/dynamic import — semua kode harus ada di repo.
+- Kompetisi dibuka 2026-11-24T11:25:25Z (sudah buka). Entri tutup 2026-11-26T15:25:00Z.
+
+REPO: buat repo publik baru barubinan123-boop/long-roast dengan gh CLI (sudah login sebagai barubinan123-boop). Folder kerja lokal: ~/workspace/makefun-bounty/long-roast/ (kit sudah diunduh di subfolder u-jolly-fox-32-the-long-roast-5d379544-kit — JANGAN salin file starter kit ke repo; bangun dari nol sesuai RULES).
+Isi repo:
+- main.ts — program yang menulis roast line ke /output/entry.txt. Buat roast-nya tajam, spesifik tentang Muse (misalnya kebiasaannya: membaca ratusan file, memanggil puluhan tool, lalu tetap bertanya; atau formal seperti JARVIS tapi...). Draft beberapa kandidat di kepalamu, pilih yang paling lucu dan padat, lalu tulis. Panjang total ≤200 karakter.
+- README.md — wajib 3 badge live make.fun persis dari template ini (ganti {owner}=barubinan123-boop, {repo}=long-roast, hapus semua placeholder):
+  # long-roast
+  [![make.fun · u-jolly-fox-32-the-long-roast-5d379544](https://make.fun/badge/u-jolly-fox-32-the-long-roast-5d379544.svg)](https://make.fun/bounty/u-jolly-fox-32-the-long-roast-5d379544?utm_source=github&utm_medium=readme&utm_campaign=u-jolly-fox-32-the-long-roast-5d379544)
+  [![rank](https://make.fun/badge/u-jolly-fox-32-the-long-roast-5d379544/barubinan123-boop/long-roast/rank.svg)](https://make.fun/bounty/u-jolly-fox-32-the-long-roast-5d379544/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-jolly-fox-32-the-long-roast-5d379544)
+  [![reward](https://make.fun/badge/u-jolly-fox-32-the-long-roast-5d379544/barubinan123-boop/long-roast/reward.svg)](https://make.fun/bounty/u-jolly-fox-32-the-long-roast-5d379544?utm_source=github&utm_medium=readme&utm_campaign=u-jolly-fox-32-the-long-roast-5d379544)
+  Lalu deskripsi singkat + cara menjalankan (node main.ts). Referral code: s0awek38 — sertakan di footer seperti template (https://make.fun/?ref=s0awek38&utm_source=github&utm_medium=readme&utm_campaign=u-jolly-fox-32-the-long-roast-5d379544).
+- LICENSE — MIT, wajib baris SPDX-License-Identifier: MIT.
+- .makefun/owner.json TIDAK perlu karena owner GitHub (barubinan123-boop) adalah login GitHub akun — tapi cek RULES bagian claim file; kalau ragu, tambahkan file itu dengan wallet address akun (jangan menebak address; kalau tidak tahu, lewati saja karena owner GitHub sudah cukup).
+
+ATURAN TRANSCRIPT (penting — check make.fun mensyaratkan ini):
+- Tulis SEMUA file dengan tool write/edit DI SESI INI, minimal 2 pesan write/edit yang berbeda, dan REVISI minimal satu file (misalnya main.ts) di pesan terpisah setelah penulisan pertama — file yang ditulis sekali penuh tanpa revisi tidak dihitung sebagai revised.
+- JANGAN baca implementasi entri lama apa pun. Bangun dari RULES saja.
+- Verifikasi lokal: jalankan `node main.ts`, cek /output/entry.txt ada, 1–200 karakter, UTF-8, dan isinya roast tentang Muse. Jalankan dua kali untuk memastikan deterministik (isi identik).
+- Simpan brief ini kata-per-kata ke ~/workspace/makefun-bounty/long-roast/prompt.txt (salin persis seluruh pesan ini ke file itu).
+- Set repo About SETELAH push: gh repo edit barubinan123-boop/long-roast --description 'Two days to sharpen one line roasting your own AI agent, under 200 characters, with the funniest taking a bigger reward. Built by an AI agent for make.fun's "The Long Roast" bounty, $2 in USDC.' --homepage 'https://make.fun/bounty/u-jolly-fox-32-the-long-roast-5d379544' --add-topic 'makefun,ai-agents,bounties,growth'
+
+YANG DILARANG:
+- JANGAN bundle/check/submit. JANGAN makefun login (akun make.fun @hsnmbrk07 SUDAH terhubung).
+- JANGAN PERNAH print/cat/log isi ~/.makefun/credentials atau ~/workspace/makefun-bounty/makefun-keypair.json.
+- JANGAN commit API key atau secret apa pun.
+
+LAPORKAN kembali saat selesai: URL repo, SHA commit lengkap (40 karakter), isi entry.txt, jumlah karakternya, dan path file sesi kamu kalau kamu tahu. Jangan laporkan apa pun yang belum selesai.
